@@ -1,0 +1,171 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Employee Create{% endblock %}
+
+{% block body %}
+
+    <div class="headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <a href="{{ path('app_dashboard') }}">
+                        <img src="{{ asset('images/conuti-logo-white-90px.png') }}">
+                    </a>
+                </div>
+                <div class="col-9">
+                    <h1>{{ "app.employee.new"|trans }}</h1>
+                </div>
+                <div class="col-1">
+                    {% if app.user %}
+                        <a href="{{ path('app_logout') }}" title="{{ "app.logout"|trans }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                </svg>
+                            </svg>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        {% for label, messages in  app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        {{ form_start(form) }}
+
+        <div class="row">
+            <div class="col-1">
+                <a href={{ path('app_employee') }}><img class="img-go-back" src="{{ asset('images/circle-chevron-left-solid.svg') }}" alt={{ "app.dashboard"|trans }}></a>
+            </div>
+            <div class="col-11">
+                {{ form_widget(form.submit) }}
+            </div>
+        </div>
+
+        <fieldset class="mt-5">
+            {{ form_label(form.personalGroup) }}
+            <div id="employee_personalGroup">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.personalGroup.name) }}
+                            {{ form_label(form.personalGroup.name) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.personalGroup.firstname) }}
+                            {{ form_label(form.personalGroup.firstname) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.personalGroup.employeeNumber) }}
+                            {{ form_label(form.personalGroup.employeeNumber) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.personalGroup.email) }}
+                            {{ form_label(form.personalGroup.email) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.personalGroup.entry) }}
+                            {{ form_label(form.personalGroup.entry) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.personalGroup.resignation) }}
+                            {{ form_label(form.personalGroup.resignation) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="mb-3">
+            {{ form_label(form.additionalGroup) }}
+            <div id="employee_additionalGroup">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.additionalGroup.hourlyRate) }}
+                            {{ form_label(form.additionalGroup.hourlyRate) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.additionalGroup.incentiveRate) }}
+                            {{ form_label(form.additionalGroup.incentiveRate) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.additionalGroup.annualWorkingTime) }}
+                            {{ form_label(form.additionalGroup.annualWorkingTime) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="mb-3">
+            {{ form_label(form.salaryGroup) }}
+            <div id="employee_additionalGroup">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.salaryGroup.targetSalary) }}
+                            {{ form_label(form.salaryGroup.targetSalary) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.salaryGroup.targetVariablePortion) }}
+                            {{ form_label(form.salaryGroup.targetVariablePortion) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.salaryGroup.fixPortion) }}
+                            {{ form_label(form.salaryGroup.fixPortion) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.salaryGroup.fixVariablePortion) }}
+                            {{ form_label(form.salaryGroup.fixVariablePortion) }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            {{ form_widget(form.salaryGroup.fixVariableEntry) }}
+                            {{ form_label(form.salaryGroup.fixVariableEntry) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="col-8">
+            {{ form_widget(form.info) }}
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+
+
+{% endblock %}

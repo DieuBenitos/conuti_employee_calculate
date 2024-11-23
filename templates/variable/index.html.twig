@@ -1,0 +1,177 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Variable Stunden{% endblock %}
+
+{% block body %}
+
+    <div class="headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <a href="{{ path('app_dashboard') }}">
+                        <img src="{{ asset('images/conuti-logo-white-90px.png') }}">
+                    </a>
+                </div>
+                <div class="col-9">
+                    <h1>{{ "app.variable.hours"|trans }}</h1>
+                </div>
+                <div class="col-1">
+                    {% if app.user %}
+                        <a href="{{ path('app_logout') }}" title="{{ "app.logout"|trans }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                </svg>
+                            </svg>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content body-content-variable">
+        {% set currentMonth = "now"|date("m") %}
+        {% set currentYear = "now"|date("Y") %}
+        <div class="row">
+            <div class="col-1">
+                <a href="{{ path('app_dashboard') }}" title="{{"app.back"|trans}}"><img class="img-go-back" src="{{ asset('images/circle-chevron-left-solid.svg') }}" alt={{ "app.dashboard"|trans }}></a>
+            </div>
+            <div class="col-8">
+                {% if is_granted('ROLE_ADMIN') or not app.getUser() %}
+                <a type="button" id="calcMonthVariable" class="btn btn-conuti float-end" href="{{ path('get_current_variable_portions', {"month" : currentMonth, "year" : currentYear}) }}">
+                    {{ "Variablen für"|trans }} {{ "now"|date("M")|trans }} {{ "berechnen"|trans }}
+                </a>
+                {% endif %}
+            </div>
+            <div class="col-3">
+                {% if is_granted('ROLE_ADMIN') or not app.getUser() %}
+                <a type="button" id="calcAllVariables" class="btn btn-conuti float-end" href="{{ path('get_variable_portions') }}">
+                    {{ "Alle Variablen berechen"|trans }}
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-3">
+                <label>Ab Jahr:</label>
+                <input type="text" class="form-control form-control-sm" id="min" name="min">
+            </div>
+            <div class="col-3">
+                <label>Bis Jahr:</label>
+                <input type="text" class="form-control form-control-sm" id="max" name="max">
+            </div>
+            <table id="variableTable" class="table table-striped responsive" width="100%">
+                <thead>
+                <tr>
+                    <th>{{ "app.employee"|trans }}</th>
+                    {% for month in 1..12 %}
+                        {% set year = "now"|date("Y") %}
+                        {% set date = month ~ "/1/" ~ year %}
+                        {% set monthName = date|date("M") %}
+                        <th>{{ monthName|trans }}</th>
+                    {% endfor %}
+                    <th>{{ "app.year"|trans }}</th>
+                    <th>{{ "Summe"|trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <div id="loader"></div>
+                {% if data %}
+                    {% for year in data.years %}
+                        {% for employeeId in data.employees %}
+                            <tr>
+                                <td>{{ employeeId.employeeNumber }}</td>
+                                {% set lastMonthHours = 0 %}
+                                {% set monthBeforeLastHours = 0 %}
+                                {% set monthBeforeBeforeLastHours = 0 %}
+                                {% set fixVariableDeltaTotal = 0 %}
+                                {% set hasFixVariable = false %}
+                                {% for month in 1..12 %}
+                                    <td>
+                                        {% for hours in employeeId.hours %}
+                                            {% if hours.month == variableMonth(month, year, 1) and hours.year == variableYear(month, year, 1) %}
+                                                {% set lastMonthHours = hours.hour|number_format(2, ',', '.') %}
+                                            {% endif %}
+                                            {% if hours.month == variableMonth(month, year, 2) and hours.year == variableYear(month, year, 2) %}
+                                                {% set monthBeforeLastHours = hours.hour|number_format(2, ',', '.') %}
+                                            {% endif %}
+                                            {% if hours.month == variableMonth(month, year, 3) and hours.year == variableYear(month, year, 3) %}
+                                                {% set monthBeforeBeforeLastHours = hours.hour|number_format(2, ',', '.') %}
+                                            {% endif %}
+                                            {% if hours.month == month and hours.year == year %}
+                                                {% set date = month ~ "/1/" ~ year %}
+                                                {% set monthName = date|date("M") %}
+                                            {% endif %}
+                                        {% endfor %}
+
+                                        {% for variables in employeeId.variables %}
+                                            {% set fixVariableDelta = 0 %}
+                                            {% if variables.month == month and variables.year == year %}
+                                                {% set deltaPortion = 0 %}
+                                                {% set class = "btn-conuti-secondary" %}
+                                                {% set variablePortion = variables.variable %}
+                                                {% if variables.fixVariable %}
+                                                    {% set variablePortion = variables.fixVariable %}
+                                                    {% set deltaPortion = variables.fixVariable - variables.variable %}
+                                                    {% set hasFixVariable = true %}
+                                                {% endif %}
+                                                {% if deltaPortion > 0 %}
+                                                    {% set class = "btn-conuti" %}
+                                                {% elseif deltaPortion < 0 %}
+                                                    {% set class = "btn-conuti-remove" %}
+                                                {% endif %}
+                                                {% set date = month ~ "/1/" ~ year %}
+                                                {% set monthName = date|date("M") %}
+                                                {% set totalAmount = variables.variable - variables.goody + variables.riffle + variables.bonus %}
+                                                {% set fixVariableDelta = variables.fixVariable - variables.variable %}
+                                                <button type="button" class="btn btn-sm {{ class }}"
+                                                        data-bs-toggle="popover"
+                                                        data-bs-title="{{ monthName|trans }}"
+                                                        data-bs-content="({{ lastMonthHours }} + {{ monthBeforeLastHours }} + {{ monthBeforeBeforeLastHours }}) / 3 - {{ variables.borderHourValue }} * {{ variables.incentiveRate }} = {{ variables.variable|number_format(2, ',', '.') }}{{ 'EUR'|currency_symbol }} - {{ variables.goody }} + {{ variables.riffle }} + {{ variables.bonus }} = {{ totalAmount|number_format(2, ',', '.') }} {{ 'EUR'|currency_symbol }}
+                                                                        {% if deltaPortion != 0 %} Differenz = {{ deltaPortion|number_format(2, ',', '.') }}{{ 'EUR'|currency_symbol }} {% endif %}"
+                                                >
+                                                    <span>{{ variables.payout|number_format(2, ',', '.') }} {{ 'EUR'|currency_symbol }}</span>
+                                                </button>
+                                            {% endif %}
+                                            {% set fixVariableDeltaTotal = fixVariableDeltaTotal + fixVariableDelta %}
+                                        {% endfor %}
+                                    </td>
+                                {% endfor %}
+                                <td>{{ year }}</td>
+                                {% set class = "btn-conuti" %}
+                                {% if fixVariableDeltaTotal < 0 %}
+                                {% set class = "btn-conuti-remove" %}
+                                {% endif %}
+                                <td>{% if hasFixVariable %}
+                                    <button type="button" class="btn btn-sm {{ class }}"
+                                            data-bs-toggle="popover"
+                                            data-bs-title="{{ "FixVariable Delta"|trans }}"
+                                            data-bs-content="{{ fixVariableDeltaTotal|number_format(2, ',', '.') }}{{ 'EUR'|currency_symbol }}">
+                                        {{ "Delta"|trans }}
+                                    </button>
+                                    {% endif %}
+                                </td>
+                                {% set hasFixVariable = false %}
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>{{ "app.employee"|trans }}</th>
+                    {% for month in 1..12 %}
+                        <th></th>
+                    {% endfor %}
+                    <th>{{ "app.year"|trans }}</th>
+                    <th></th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

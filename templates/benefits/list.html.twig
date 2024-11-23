@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Benefits{% endblock %}
+
+{% block body %}
+
+<div class="headline">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <a href="{{ path('app_dashboard') }}">
+                    <img src="{{ asset('images/conuti-logo-white-90px.png') }}">
+                </a>
+            </div>
+            <div class="col-9">
+                <h1>{{ "app.benefits"|trans }}</h1>
+            </div>
+            <div class="col-1">
+                {% if app.user %}
+                    <a href="{{ path('app_logout') }}" title="{{ "app.logout"|trans }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                            </svg>
+                        </svg>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-1">
+                <a href="{{ path('app_dashboard') }}" title="{{"app.back"|trans}}"><img class="img-go-back" src="{{ asset('images/circle-chevron-left-solid.svg') }}" alt={{ "Dashboard"|trans }}></a>
+            </div>
+            <div class="col-11">
+                <a class="a-conuti float-end" href="{{ path('app_benefits_manage') }}" title="{{ "app.create.new.benefit"|trans }}">
+                    <figure class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-taxi-front-fill" viewBox="0 0 16 16">
+                            <path d="M6 1a1 1 0 0 0-1 1v1h-.181A2.5 2.5 0 0 0 2.52 4.515l-.792 1.848a.8.8 0 0 1-.38.404c-.5.25-.855.715-.965 1.262L.05 9.708a2.5 2.5 0 0 0-.049.49v.413c0 .814.39 1.543 1 1.997V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.338c1.292.048 2.745.088 4 .088s2.708-.04 4-.088V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.892c.61-.454 1-1.183 1-1.997v-.413q0-.248-.049-.49l-.335-1.68a1.8 1.8 0 0 0-.964-1.261.8.8 0 0 1-.381-.404l-.792-1.848A2.5 2.5 0 0 0 11.181 3H11V2a1 1 0 0 0-1-1zM4.309 4h7.382a.5.5 0 0 1 .447.276l.956 1.913a.51.51 0 0 1-.497.731c-.91-.073-3.35-.17-4.597-.17s-3.688.097-4.597.17a.51.51 0 0 1-.497-.731l.956-1.913A.5.5 0 0 1 4.309 4M4 10a1 1 0 1 1-2 0 1 1 0 0 1 2 0m10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-9 0a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1"/>
+                        </svg>
+                        <figcaption>{{ "app.new"|trans }}</figcaption>
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <table id="benefitTable" class="table table-sm table-striped w-100">
+                <thead>
+                <tr>
+                    <th>{{ "app.benefits"|trans }}</th>
+                    <th>{{ "app.monetary.benefit"|trans }}</th>
+                    <th>{{ "app.action"|trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for benefit in benefits %}
+                    <tr>
+                        <td>{{ benefit.name }}</td>
+                        <td>{{ not benefit.isMonetaryBenefit ? 'Nein' : 'Ja' }}</td>
+                        <td>
+                            <button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ benefit.id }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                </svg>
+                            </button>
+                            <a href={{ path('app_benefits_manage', { 'benefitId': benefit.id }) }} >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                </svg>
+                            </a>
+                            {% include "benefits/modal/delete.html.twig" with { 'benefit': benefit }%}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>{{ "app.benefits"|trans }}</th>
+                    <th>{{ "app.monetary.benefit"|trans }}</th>
+                    <th>{{ "app.action"|trans }}</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

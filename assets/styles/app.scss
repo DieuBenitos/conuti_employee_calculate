@@ -1,0 +1,201 @@
+@import '_dataTables.scss';
+@import '_highCharts.scss';
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-image: url("../../assets/images/website-hintergrund.jpg");
+  background-color: white;
+  min-height: 100%;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.headline {
+  background: #1c3945;
+  background-size: auto;
+  color: white;
+  padding: 20px;
+  svg {
+    color: #96cc27;
+  }
+}
+.body-content-variable{
+  max-width: 1402px;
+}
+.body-content {
+  margin-top: 7%;
+  background-color: rgba(255,255,255,0.3);
+  padding:45px;
+  .img-go-back {
+    width: 50%;
+  }
+  svg {
+    color: #96cc27;
+  }
+  .dashboard-image {
+    font-size: 1.8rem;
+    color: #1c3945;
+    text-decoration: none;
+    background-color: rgba(150,204,39,0.9);
+    padding:7px;
+  }
+  .card {
+    border-radius: 0;
+    background-color: rgba(255,255,255,0.9);
+    .card-body {
+      text-align: center;
+    }
+  }
+  .card-img-top {
+    border-radius: 0;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+}
+
+.btn-conuti {
+  background-color: rgba(150,204,39,0.9);
+  color: #1c3945;
+  border-radius: 0;
+}
+
+.btn-conuti-secondary {
+  border-radius: 0;
+  color:white;
+  background-color: #6c757d
+}
+
+.btn-conuti-remove {
+  border-radius: 0;
+  color:#1c3945;
+  background-color: indianred;
+}
+
+fieldset {
+  .col-form-label {
+    font-size: larger;
+  }
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.form-select {
+  border-radius: 0;
+}
+
+.form-floating > .form-select {
+  min-height: 150px;
+}
+
+.modal-content {
+  .modal-header .close {
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
+  }
+  button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+  }
+  .close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+  }
+}
+
+.a-conuti {
+  color:#96cc27;
+}
+
+.active > .page-link {
+  z-index: 3;
+  color: #1c3945;
+  background-color: #96cc27;
+  border-color: #96cc27;
+}
+
+.page-link {
+  color: #1c3945;
+}
+
+.form-check-input:checked {
+  background-color: #96cc27;
+  border-color: #96cc27;
+}
+
+.riffleLabel {
+  display: none;
+}
+
+.goodiesLabel {
+  display: none;
+}
+
+.bonusLabel {
+  display: none;
+}
+
+.hoursLabel {
+  display: none;
+}
+
+dt {
+  float: left;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+/* und noch der Doppelpunkt */
+dt::after {
+  content: ": ";
+}
+
+/* ein Clearfix für Folge-dd-Elemente */
+dd::after {
+  clear: left;
+  content: " ";
+  display: block;
+}
+
+#loader {
+  display: none;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #96cc27; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left:47%;
+  top:70%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+fieldset .col-form-label{
+  padding-top: 0;
+  font-size: medium;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}

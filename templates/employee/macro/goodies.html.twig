@@ -1,0 +1,57 @@
+<div class="col-xs-4 js-item-goodies">
+    {{ form_errors(form) }}
+    <div class="row">
+        <div class="col-3">
+            <div class="form-floating mb-3">
+                {{ form_widget(form.designation) }}
+                {{ form_label(form.designation) }}
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-floating mb-3">
+                {{ form_widget(form.totalAmount) }}
+                {{ form_label(form.totalAmount) }}
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-floating mb-3">
+                {{ form_widget(form.divider) }}
+                {{ form_label(form.divider) }}
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-floating mb-3">
+                {{ form_widget(form.partialAmounts) }}
+                {{ form_label(form.partialAmounts) }}
+            </div>
+        </div>
+        <div class="col-3">
+                {{ form_label(form.month) }}
+                {{ form_widget(form.month) }}
+        </div>
+        <div class="col-3">
+                {{ form_label(form.year) }}
+                {{ form_widget(form.year) }}
+        </div>
+        <div class="col-3 mt-3">
+            <div class="form-floating">
+                {{ form_widget(form.info) }}
+                {{ form_label(form.info) }}
+            </div>
+        </div>
+        <div class="col-3 pt-4">
+            {{ form_widget(form.charged) }}
+            {{ form_label(form.charged) }}
+            {{ form_widget(form.changed) }}
+            {{ form_label(form.changed) }}
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-3">
+                    {{ form_widget(form.removeEntryGoody) }}
+                    {{ form_label(form.removeEntryGoody) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div id="deleteModal-{{ benefit.Id }}" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ "Benefit löschen"|trans }}</h4>
+                <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Möchtest du den Benefit {{ benefit.name }} wirklich aus dem System löschen?</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-danger" href="{{ path("app_benefits_delete", {"benefitId": benefit.id}) }}">Löschen</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ "Schließen"|trans }}</button>
+            </div>
+        </div>
+    </div>
+</div>

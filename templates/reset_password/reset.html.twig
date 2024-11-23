@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+    <div class="headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <a href="{{ path('app_dashboard') }}">
+                        <img src="{{ asset('images/conuti-logo-white-90px.png') }}">
+                    </a>
+                </div>
+                <div class="col-8">
+                    <h1>{{ "Passwort zurücksetzen"|trans }}</h1>
+                </div>
+                <div class="col-1">
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        {{ form_start(resetForm) }}
+        {{ form_row(resetForm.plainPassword) }}
+        <button class="btn btn-conuti mt-3">{{ "Passwort zurücksetzen"|trans }}</button>
+        {{ form_end(resetForm) }}
+    </div>
+{% endblock %}

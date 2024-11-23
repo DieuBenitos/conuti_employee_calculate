@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Password Reset Email Sent{% endblock %}
+
+{% block body %}
+    <div class="headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <a href="{{ path('app_dashboard') }}">
+                        <img src="{{ asset('images/conuti-logo-white-90px.png') }}">
+                    </a>
+                </div>
+                <div class="col-8">
+                    <h1>{{ "Email versandt"|trans }}</h1>
+                </div>
+                <div class="col-1">
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <p>
+            {{ "Wenn ein Konto existiert, das mit Ihrer E-Mail-Adresse übereinstimmt, wurde soeben eine E-Mail mit einem
+            Link verschickt, mit dem Sie Ihr Passwort zurücksetzen können.
+            Dieser Link wird in"|trans }} {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}
+            {{ "ablaufen"|trans }}.
+        </p>
+        <p>{{ "Wenn Sie keine E-Mail erhalten, überprüfen Sie bitte Ihren Spam-Ordner oder"|trans }} <a class="a-conuti" href="{{ path('app_forgot_password_request') }}">erneut schicken</a>.</p>
+    </div>
+
+{% endblock %}

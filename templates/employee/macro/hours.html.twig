@@ -1,0 +1,29 @@
+<div class="col-xs-4 js-item-hours">
+    {{ form_errors(form) }}
+    <div class="row mb-3">
+        <div class="col-3">
+            <div class="form-floating">
+                {{ form_widget(form.variableHours) }}
+                {{ form_label(form.variableHours) }}
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-floating">
+                {{ form_widget(form.info) }}
+                {{ form_label(form.info) }}
+            </div>
+        </div>
+        <div class="col-3">
+            {{ form_widget(form.month) }}
+        </div>
+        <div class="col-3">
+            {{ form_widget(form.year) }}
+        </div>
+        <div class="col-3 mt-1">
+            <div class="form-floating">
+                {{ form_widget(form.removeEntryHours) }}
+                {{ form_label(form.removeEntryHours) }}
+            </div>
+        </div>
+    </div>
+</div>

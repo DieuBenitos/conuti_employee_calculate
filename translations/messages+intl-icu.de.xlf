@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="de" target-language="de" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="LP_bqr9" resname="Import">
+        <source>Import</source>
+        <target>Import</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="VIYRzlj" resname="Zurück">
+        <source>Zurück</source>
+        <target>Zurück</target>
+      </trans-unit>
+      <trans-unit id="Z7aWRoY" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>Dashboard</target>
+      </trans-unit>
+      <trans-unit id="hjXn2ny" resname="Variable Stunden">
+        <source>Variable Stunden</source>
+        <target>Variable Stunden</target>
+      </trans-unit>
+      <trans-unit id="ys6XJ2D" resname="Mitarbeiterdaten">
+        <source>Mitarbeiterdaten</source>
+        <target>Mitarbeiterdaten</target>
+      </trans-unit>
+      <trans-unit id="XcEc_GE" resname="Mitarbeiterliste">
+        <source>Mitarbeiterliste</source>
+        <target>Mitarbeiterliste</target>
+      </trans-unit>
+      <trans-unit id="1bZ7yTD" resname="Benefits">
+        <source>Benefits</source>
+        <target>Benefits</target>
+      </trans-unit>
+      <trans-unit id="pwgrRLi" resname="Neuen Benefit anelgen">
+        <source>Neuen Benefit anelgen</source>
+        <target>__Neuen Benefit anelgen</target>
+      </trans-unit>
+      <trans-unit id="sDOWKjZ" resname="Neu anlegen">
+        <source>Neu anlegen</source>
+        <target>Neu anlegen</target>
+      </trans-unit>
+      <trans-unit id="DAgp0_M" resname="Benefit">
+        <source>Benefit</source>
+        <target>Benefit</target>
+      </trans-unit>
+      <trans-unit id="arzivDH" resname="geldwerter Vorteil">
+        <source>geldwerter Vorteil</source>
+        <target>geldwerter Vorteil</target>
+      </trans-unit>
+      <trans-unit id="ZM.xMZ0" resname="Action">
+        <source>Action</source>
+        <target>Action</target>
+      </trans-unit>
+      <trans-unit id="Hnf.Aij" resname="Benefit löschen">
+        <source>Benefit löschen</source>
+        <target>__Benefit löschen</target>
+      </trans-unit>
+      <trans-unit id="uAj26XB" resname="Schließen">
+        <source>Schließen</source>
+        <target>Schließen</target>
+      </trans-unit>
+      <trans-unit id="UpcuGRL" resname="Benefits verwalten">
+        <source>Benefits verwalten</source>
+        <target>Benefits verwalten</target>
+      </trans-unit>
+      <trans-unit id="pIaf5X3" resname="Variablen für">
+        <source>Variablen für</source>
+        <target>Variablen für</target>
+      </trans-unit>
+      <trans-unit id="NN0tVts" resname="berechnen">
+        <source>berechnen</source>
+        <target>berechnen</target>
+      </trans-unit>
+      <trans-unit id="_qEJwmH" resname="Alle Variablen berechen">
+        <source>Alle Variablen berechen</source>
+        <target>Alle Variablen berechen</target>
+      </trans-unit>
+      <trans-unit id="ntY22zI" resname="Pers.Nr.">
+        <source>Pers.Nr.</source>
+        <target>Pers.Nr.</target>
+      </trans-unit>
+      <trans-unit id="7RrZO4l" resname="Jahr">
+        <source>Jahr</source>
+        <target>Jahr</target>
+      </trans-unit>
+      <trans-unit id="JiZpX5B" resname="Personalnummer">
+        <source>Personalnummer</source>
+        <target>Personalnummer</target>
+      </trans-unit>
+      <trans-unit id="NmSJVXn" resname="Export">
+        <source>Export</source>
+        <target>Export</target>
+      </trans-unit>
+      <trans-unit id="Jr2mrMy" resname="Download Mitarbeiter">
+        <source>Download Mitarbeiter</source>
+        <target>__Download Mitarbeiter</target>
+      </trans-unit>
+      <trans-unit id="xF4wHLx" resname="Konfigurator">
+        <source>Konfigurator</source>
+        <target>Konfigurator</target>
+      </trans-unit>
+      <trans-unit id=".LkIgTx" resname="Mitarbeiter anlegen">
+        <source>Mitarbeiter anlegen</source>
+        <target>Mitarbeiter anlegen</target>
+      </trans-unit>
+      <trans-unit id="9Mtokbn" resname="Mitarbeiter">
+        <source>Mitarbeiter</source>
+        <target>Mitarbeiter</target>
+      </trans-unit>
+      <trans-unit id="iz3mC9p" resname="Neuen Mitarbeiter anelgen">
+        <source>Neuen Mitarbeiter anelgen</source>
+        <target>Neuen Mitarbeiter anelgen</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="0td7b.p" resname="Vorname">
+        <source>Vorname</source>
+        <target>Vorname</target>
+      </trans-unit>
+      <trans-unit id="emWJUkU" resname="Eintritt">
+        <source>Eintritt</source>
+        <target>Eintritt</target>
+      </trans-unit>
+      <trans-unit id="2mdQND9" resname="Grenzstundensatz">
+        <source>Grenzstundensatz</source>
+        <target>Grenzstundensatz</target>
+      </trans-unit>
+      <trans-unit id="sG.5BHu" resname="Incentivsatz">
+        <source>Incentivsatz</source>
+        <target>Incentivsatz</target>
+      </trans-unit>
+      <trans-unit id="CyzJ4kl" resname="Zielgehalt">
+        <source>Zielgehalt</source>
+        <target>Zielgehalt</target>
+      </trans-unit>
+      <trans-unit id="1MegsR4" resname="Variabler Anteil">
+        <source>Variabler Anteil</source>
+        <target>Variabler Anteil</target>
+      </trans-unit>
+      <trans-unit id="gcFN2A9" resname="Fixer Anteil">
+        <source>Fixer Anteil</source>
+        <target>Fixer Anteil</target>
+      </trans-unit>
+      <trans-unit id="5X6ZhyY" resname="Variable">
+        <source>Variable</source>
+        <target>__Variable</target>
+      </trans-unit>
+      <trans-unit id="VVm361w" resname="Riffle">
+        <source>Riffle</source>
+        <target>__Riffle</target>
+      </trans-unit>
+      <trans-unit id="rZw_93Y" resname="Goodies">
+        <source>Goodies</source>
+        <target>Goodies</target>
+      </trans-unit>
+      <trans-unit id="1YdiLSd" resname="Bonus">
+        <source>Bonus</source>
+        <target>Bonus</target>
+      </trans-unit>
+      <trans-unit id="HptmMoN" resname="variable Zeiten:">
+        <source>variable Zeiten:</source>
+        <target>variable Zeiten:</target>
+      </trans-unit>
+      <trans-unit id="I28pt5e" resname="Summe:">
+        <source>Summe:</source>
+        <target>Summe:</target>
+      </trans-unit>
+      <trans-unit id="00wkkIn" resname="Mitarbeiter löschen">
+        <source>Mitarbeiter löschen</source>
+        <target>Mitarbeiter löschen</target>
+      </trans-unit>
+      <trans-unit id="mOXzr.X" resname="Mitarbeiter berarbeiten">
+        <source>Mitarbeiter berarbeiten</source>
+        <target>Mitarbeiter berarbeiten</target>
+      </trans-unit>
+      <trans-unit id="uMrnjO_" resname="Stunden einfügen">
+        <source>Stunden einfügen</source>
+        <target>Stunden einfügen</target>
+      </trans-unit>
+      <trans-unit id="JGWqZV3" resname="Riffle einfügen">
+        <source>Riffle einfügen</source>
+        <target>Riffle einfügen</target>
+      </trans-unit>
+      <trans-unit id="sUoxdc4" resname="Goodies einfügen">
+        <source>Goodies einfügen</source>
+        <target>__Goodies einfügen</target>
+      </trans-unit>
+      <trans-unit id="gIFzwp5" resname="Bonus einfügen">
+        <source>Bonus einfügen</source>
+        <target>Bonus einfügen</target>
+      </trans-unit>
+      <trans-unit id="zKPzYbJ" resname="Email versandt">
+        <source>Email versandt</source>
+        <target>Email versandt</target>
+      </trans-unit>
+      <trans-unit id="ZNFnMxq" resname="Wenn ein Konto existiert, das mit Ihrer E-Mail-Adresse übereinstimmt, wurde soeben eine E-Mail mit einem&#10;            Link verschickt, mit dem Sie Ihr Passwort zurücksetzen können.&#10;            Dieser Link wird in">
+        <source>Wenn ein Konto existiert, das mit Ihrer E-Mail-Adresse übereinstimmt, wurde soeben eine E-Mail mit einem
+            Link verschickt, mit dem Sie Ihr Passwort zurücksetzen können.
+            Dieser Link wird in</source>
+        <target>Wenn ein Konto existiert, das mit Ihrer E-Mail-Adresse übereinstimmt, wurde soeben eine E-Mail mit einem
+            Link verschickt, mit dem Sie Ihr Passwort zurücksetzen können.
+            Dieser Link wird in</target>
+      </trans-unit>
+      <trans-unit id="8Oqhhz4" resname="ablaufen">
+        <source>ablaufen</source>
+        <target>ablaufen</target>
+      </trans-unit>
+      <trans-unit id="YbX5epd" resname="Wenn Sie keine E-Mail erhalten, überprüfen Sie bitte Ihren Spam-Ordner oder">
+        <source>Wenn Sie keine E-Mail erhalten, überprüfen Sie bitte Ihren Spam-Ordner oder</source>
+        <target>Wenn Sie keine E-Mail erhalten, überprüfen Sie bitte Ihren Spam-Ordner oder</target>
+      </trans-unit>
+      <trans-unit id="bGFqxj8" resname="Passwort zurücksetzen">
+        <source>Passwort zurücksetzen</source>
+        <target>Passwort zurücksetzen</target>
+      </trans-unit>
+      <trans-unit id="i4R.BNz" resname="Geben Sie Ihre E-Mail-Adresse ein, und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.">
+        <source>Geben Sie Ihre E-Mail-Adresse ein, und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.</source>
+        <target>Geben Sie Ihre E-Mail-Adresse ein, und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.</target>
+      </trans-unit>
+      <trans-unit id="Vm.i0E_" resname="Registrierung">
+        <source>Registrierung</source>
+        <target>Registrierung</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="SoJuTsv" resname="Zur Registrierung">
+        <source>Zur Registrierung</source>
+        <target>Zur Registrierung</target>
+      </trans-unit>
+      <trans-unit id="hNjjqzG" resname="Passwort vergessen">
+        <source>Passwort vergessen</source>
+        <target>Passwort vergessen</target>
+      </trans-unit>
+      <trans-unit id="VBuh9vP" resname="Zu den Benefits">
+        <source>Zu den Benefits</source>
+        <target>__Zu den Benefits</target>
+      </trans-unit>
+      <trans-unit id="4BEHLiN" resname="Datenimport">
+        <source>Datenimport</source>
+        <target>__Datenimport</target>
+      </trans-unit>
+      <trans-unit id="sAIqy6D" resname="Zum Import">
+        <source>Zum Import</source>
+        <target>Zum Import</target>
+      </trans-unit>
+      <trans-unit id="m4U4C2m" resname="Datenexport">
+        <source>Datenexport</source>
+        <target>Datenexport</target>
+      </trans-unit>
+      <trans-unit id="GdPGl33" resname="Zum Export">
+        <source>Zum Export</source>
+        <target>Zum Export</target>
+      </trans-unit>
+      <trans-unit id="pFEGAbq" resname="Zur Mitarbeiterliste">
+        <source>Zur Mitarbeiterliste</source>
+        <target>Zur Mitarbeiterliste</target>
+      </trans-unit>
+      <trans-unit id="Y3Gu_Dn" resname="Zu den variablen Stunden">
+        <source>Zu den variablen Stunden</source>
+        <target>Zu den variablen Stunden</target>
+      </trans-unit>
+      <trans-unit id="nsnTn4g" resname="app.config">
+        <source>app.config</source>
+        <target>Konfigurator</target>
+      </trans-unit>
+      <trans-unit id="QujywLG" resname="app.data.employee.download">
+        <source>app.data.employee.download</source>
+        <target>Download Mitarbeiter</target>
+      </trans-unit>
+      <trans-unit id="OQeaE2Z" resname="app.close">
+        <source>app.close</source>
+        <target>Schließen</target>
+      </trans-unit>
+      <trans-unit id="YJ5iVgL" resname="app.employee.delete">
+        <source>app.employee.delete</source>
+        <target>Mitarbeiter löschen</target>
+      </trans-unit>
+      <trans-unit id="r6F634k" resname="app.year">
+        <source>app.year</source>
+        <target>Jahr</target>
+      </trans-unit>
+      <trans-unit id="ub.iIkM" resname="app.employee.edit">
+        <source>app.employee.edit</source>
+        <target>Mitarbeiter berarbeiten</target>
+      </trans-unit>
+      <trans-unit id="v8Shu_l" resname="app.employee.hours.add">
+        <source>app.employee.hours.add</source>
+        <target>Stunden einfügen</target>
+      </trans-unit>
+      <trans-unit id="EAvqAPT" resname="app.employee.riffle.add">
+        <source>app.employee.riffle.add</source>
+        <target>Riffle einfügen</target>
+      </trans-unit>
+      <trans-unit id="vPDJ3ps" resname="app.employee.goodies.add">
+        <source>app.employee.goodies.add</source>
+        <target>Goodies einfügen</target>
+      </trans-unit>
+      <trans-unit id="ZJ5yDlO" resname="app.employee.bonus.add">
+        <source>app.employee.bonus.add</source>
+        <target>Bonus einfügen</target>
+      </trans-unit>
+      <trans-unit id="A5AYzFr" resname="app.riffle">
+        <source>app.riffle</source>
+        <target>Riffle</target>
+      </trans-unit>
+      <trans-unit id="rLjY1Wm" resname="app.goodies">
+        <source>app.goodies</source>
+        <target>Goodies</target>
+      </trans-unit>
+      <trans-unit id="C6gZ5kE" resname="app.bonus">
+        <source>app.bonus</source>
+        <target>Bonus</target>
+      </trans-unit>
+      <trans-unit id="K2TdmH4" resname="app.employee.sum">
+        <source>app.employee.sum</source>
+        <target>Summe:</target>
+      </trans-unit>
+      <trans-unit id="8zcIS6i" resname="app.employee.number">
+        <source>app.employee.number</source>
+        <target>Personalnr.</target>
+      </trans-unit>
+      <trans-unit id="tsAv1xR" resname="app.employee.new">
+        <source>app.employee.new</source>
+        <target>Neuen Mitarbeiter anelgen</target>
+      </trans-unit>
+      <trans-unit id="x2vi0WO" resname="app.employee.personal.data">
+        <source>app.employee.personal.data</source>
+        <target>Persönliche Daten</target>
+      </trans-unit>
+      <trans-unit id="PuYKqjo" resname="app.employee.name">
+        <source>app.employee.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="WwYfq8D" resname="app.employee.firstname">
+        <source>app.employee.firstname</source>
+        <target>Vorname</target>
+      </trans-unit>
+      <trans-unit id="PfoJBWH" resname="app.employee.entry">
+        <source>app.employee.entry</source>
+        <target>Eintritt</target>
+      </trans-unit>
+      <trans-unit id="8Hz1ySj" resname="app.employee.exit">
+        <source>app.employee.exit</source>
+        <target>Austritt</target>
+      </trans-unit>
+      <trans-unit id="rsoXC4J" resname="app.employee.submit">
+        <source>app.employee.submit</source>
+        <target>Speichern</target>
+      </trans-unit>
+      <trans-unit id="u5GI89l" resname="app.employee.hourly.rate">
+        <source>app.employee.hourly.rate</source>
+        <target>Grenzstundensatz</target>
+      </trans-unit>
+      <trans-unit id="DVuDgyV" resname="app.employee.incentiv">
+        <source>app.employee.incentiv</source>
+        <target>Incentivsatz</target>
+      </trans-unit>
+      <trans-unit id="_eG291T" resname="app.employee.target.salary">
+        <source>app.employee.target.salary</source>
+        <target>Zielgehalt</target>
+      </trans-unit>
+      <trans-unit id="eXDxKyL" resname="app.employee.variable.rate">
+        <source>app.employee.variable.rate</source>
+        <target>Variabler Anteil</target>
+      </trans-unit>
+      <trans-unit id="Gn4Ne3l" resname="app.employee.fix.rate">
+        <source>app.employee.fix.rate</source>
+        <target>Fixer Anteil</target>
+      </trans-unit>
+      <trans-unit id="Vx47d_i" resname="app.employee.variable">
+        <source>app.employee.variable</source>
+        <target>Variable</target>
+      </trans-unit>
+      <trans-unit id="O708Jxf" resname="app.logout">
+        <source>app.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="5GTbhXB" resname="app.back">
+        <source>app.back</source>
+        <target>Zurück</target>
+      </trans-unit>
+      <trans-unit id="KGc0u2D" resname="app.dashboard">
+        <source>app.dashboard</source>
+        <target>Dashboard</target>
+      </trans-unit>
+      <trans-unit id="xs3ulLk" resname="app.variable.hours">
+        <source>app.variable.hours</source>
+        <target>Variable Stunden</target>
+      </trans-unit>
+      <trans-unit id="lLE5QbH" resname="app.data.employee">
+        <source>app.data.employee</source>
+        <target>Mitarbeiterdaten</target>
+      </trans-unit>
+      <trans-unit id="TK1FhdU" resname="app.data.employee.list">
+        <source>app.data.employee.list</source>
+        <target>Mitarbeiterliste</target>
+      </trans-unit>
+      <trans-unit id="yB.V3i8" resname="app.benefits">
+        <source>app.benefits</source>
+        <target>Benefits</target>
+      </trans-unit>
+      <trans-unit id="Il7ec3w" resname="app.create.new.benefit">
+        <source>app.create.new.benefit</source>
+        <target>Neuen Benefit anelgen</target>
+      </trans-unit>
+      <trans-unit id="l2kThh_" resname="app.new">
+        <source>app.new</source>
+        <target>Neu anlegen</target>
+      </trans-unit>
+      <trans-unit id="JC1CuRH" resname="app.monetary.benefit">
+        <source>app.monetary.benefit</source>
+        <target>geldwerter Vorteil</target>
+      </trans-unit>
+      <trans-unit id="tCAt25B" resname="app.action">
+        <source>app.action</source>
+        <target>Aktion</target>
+      </trans-unit>
+      <trans-unit id="rTNwZ2Q" resname="app.benefits.manage">
+        <source>app.benefits.manage</source>
+        <target>Benefits verwalten</target>
+      </trans-unit>
+      <trans-unit id="K9DI8fS" resname="app.employee">
+        <source>app.employee</source>
+        <target>Mitarbeiter</target>
+      </trans-unit>
+      <trans-unit id="npNUO7L" resname="app.benefits.go">
+        <source>app.benefits.go</source>
+        <target>Zu den Benefits</target>
+      </trans-unit>
+      <trans-unit id="zCc8oGu" resname="app.data.import">
+        <source>app.data.import</source>
+        <target>Datenimport</target>
+      </trans-unit>
+      <trans-unit id="fCCBnue" resname="app.data.import.go">
+        <source>app.data.import.go</source>
+        <target>Zum Import</target>
+      </trans-unit>
+      <trans-unit id="yjmsYP6" resname="app.data.export">
+        <source>app.data.export</source>
+        <target>Datenexport</target>
+      </trans-unit>
+      <trans-unit id="K_ig3nU" resname="app.data.export.go">
+        <source>app.data.export.go</source>
+        <target>Zum Export</target>
+      </trans-unit>
+      <trans-unit id="Rwb_b2N" resname="app.employee.go">
+        <source>app.employee.go</source>
+        <target>Zur Mitarbeiterliste</target>
+      </trans-unit>
+      <trans-unit id="LgEdQ22" resname="app.variable.go">
+        <source>app.variable.go</source>
+        <target>Zu den variablen Stunden</target>
+      </trans-unit>
+      <trans-unit id="oczuPei" resname="app.data.employee.strucutre">
+        <source>app.data.employee.strucutre</source>
+        <target>Aufbau der Mitarbeitertabelle</target>
+      </trans-unit>
+      <trans-unit id=".LPTmCC" resname="app.data.variable.message">
+        <source>app.data.variable.message</source>
+        <target>Achtung, falls die Importdatei Mitarbeiter enthält, die nicht in der Mitarbeiter-Tabelle vorhanden sind, werden diese neu im System angelegt!</target>
+      </trans-unit>
+      <trans-unit id="Pbwx16C" resname="app.data.variable.hours.structure">
+        <source>app.data.variable.hours.structure</source>
+        <target>Aufbau der Stundentabelle</target>
+      </trans-unit>
+      <trans-unit id="JXm7Vpb" resname="app.data.variable.hours.text">
+        <source>app.data.variable.hours.text</source>
+        <target>Es kann nach belieben die Ausgabe für den Export der variablen Stunden konfiguriert werden.</target>
+      </trans-unit>
+      <trans-unit id="xx2rQk0" resname="app.data.employee.text">
+        <source>app.data.employee.text</source>
+        <target>Eine Mitarbeiter Excel Datei kann im gewünschten Format heruntergeladen werden.</target>
+      </trans-unit>
+      <trans-unit id="XF2xIMs" resname="Jan">
+        <source>Jan</source>
+        <target>Jan</target>
+      </trans-unit>
+      <trans-unit id="yvcbP1g" resname="Feb">
+        <source>Feb</source>
+        <target>Feb</target>
+      </trans-unit>
+      <trans-unit id="tLfTgY2" resname="Mar">
+        <source>Mar</source>
+        <target>Mär</target>
+      </trans-unit>
+      <trans-unit id="YXUxtP7" resname="Apr">
+        <source>Apr</source>
+        <target>Apr</target>
+      </trans-unit>
+      <trans-unit id="jHj_W5k" resname="May">
+        <source>May</source>
+        <target>Mai</target>
+      </trans-unit>
+      <trans-unit id="sn.UbtG" resname="Jun">
+        <source>Jun</source>
+        <target>Jun</target>
+      </trans-unit>
+      <trans-unit id="xD9WuYB" resname="Jul">
+        <source>Jul</source>
+        <target>Jul</target>
+      </trans-unit>
+      <trans-unit id="QeHYKqm" resname="Aug">
+        <source>Aug</source>
+        <target>Aug</target>
+      </trans-unit>
+      <trans-unit id="RR4rcZB" resname="Sep">
+        <source>Sep</source>
+        <target>Sep</target>
+      </trans-unit>
+      <trans-unit id="aHfoSUw" resname="Oct">
+        <source>Oct</source>
+        <target>Okt</target>
+      </trans-unit>
+      <trans-unit id="PmMNKWS" resname="Nov">
+        <source>Nov</source>
+        <target>Nov</target>
+      </trans-unit>
+      <trans-unit id="8qDPvPG" resname="Dec">
+        <source>Dec</source>
+        <target>Dez</target>
+      </trans-unit>
+      <trans-unit id="8qDfvPG" resname="app.from.year">
+        <source>app.from.year</source>
+        <target>Von Jahr</target>
+      </trans-unit>
+      <trans-unit id="8qDdvPG" resname="app.to.year">
+        <source>app.to.year</source>
+        <target>Bis Jahr</target>
+      </trans-unit>
+      <trans-unit id="8qDhzPG" resname="app.employee.fix.variable.entry">
+        <source>app.employee.fix.variable.entry</source>
+        <target>FixVariable ab</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

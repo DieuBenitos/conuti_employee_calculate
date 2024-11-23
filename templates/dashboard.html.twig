@@ -1,0 +1,96 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+    <div class="headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <a href="{{ path('app_dashboard') }}">
+                        <img src="{{ asset('images/conuti-logo-white-90px.png') }}">
+                    </a>
+                </div>
+                <div class="col-9">
+                    <h1>{{ "app.dashboard"|trans }}</h1>
+                </div>
+                <div class="col-1">
+                    {% if app.user %}
+                        <a href="{{ path('app_logout') }}" title="{{ "app.logout"|trans }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                </svg>
+                            </svg>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="card-group">
+                        {% if is_granted('ROLE_ADMIN') or not app.getUser() %}
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('images/benefits2.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ "app.benefits"|trans }}</h5>
+                                    <a class="btn btn-conuti" href={{ path('app_benefits') }}>{{ "app.benefits.go"|trans }}</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('images/datenimport.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ "app.data.import"|trans }}</h5>
+                                    <a class="btn btn-conuti" href={{ path('import_list') }}>{{ "app.data.import.go"|trans }}</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('images/datenexport.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ "app.data.export"|trans }}</h5>
+                                <a class="btn btn-conuti" href={{ path('export_list') }}>{{ "app.data.export.go"|trans }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="card-group">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('images/mitarbeiter3.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ "app.employee"|trans }}</h5>
+                                <a class="btn btn-conuti" href={{ path('app_employee') }}>{{ "app.employee.go"|trans }}</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('images/variable2.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ "app.variable.hours"|trans }}</h5>
+                                <a class="btn btn-conuti" href={{ path('app_variables_index') }}>{{ "app.variable.go"|trans }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12 dashboard-col">
+                        <div class="js-chart-data"
+                             data-chart="{{ chartData|json_encode }}"
+                        ></div>
+                        <div id="variable-chart" style="margin-bottom: 1em;" class="chart-display"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

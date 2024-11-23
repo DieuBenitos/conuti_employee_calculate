@@ -1,0 +1,122 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Variablestunden Import{% endblock %}
+
+{% block body %}
+
+    <div class="headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <a href="{{ path('app_dashboard') }}">
+                        <img src="{{ asset('images/conuti-logo-white-90px.png') }}">
+                    </a>
+                </div>
+                <div class="col-9">
+                    <h1>{{ "app.variable.hours"|trans }}</h1>
+                </div>
+                <div class="col-1">
+                    {% if app.user %}
+                        <a href="{{ path('app_logout') }}" title="{{ "app.logout"|trans }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                </svg>
+                            </svg>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+
+        {{ form_start(form) }}
+
+        {% for label, messages in  app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}" role="alert">
+                    <div class="row">
+                        <div class="col-9">
+                            {{ message }}
+                        </div>
+                        <div class="col-3">
+                            {% if label == "warning" %}
+                                {{ form_row(form.checkIfImported) }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div class="row">
+            <div class="col-1">
+                <a href="{{ path('import_list') }}" title="{{ "app.back"|trans }}"><img class="img-go-back" src="{{ asset('images/circle-chevron-left-solid.svg') }}" alt={{ "app.dashboard"|trans }}></a>
+            </div>
+            <div class="col-11">
+                {{ form_row(form.save) }}
+            </div>
+        </div>
+
+        <div class="col-4 mt-5">
+            {% set fileValue = app.request.get('file') %}
+            {{ form_label(form.import) }}
+            {{ form_widget(form.import) }}
+        </div>
+
+        <div class="row">
+            <div class="col-6 mt-2">
+                {% set monthValue = app.request.get('month') %}
+                {{ form_label(form.month) }}
+                {{ form_widget(form.month, {'value': monthValue }) }}
+            </div>
+            <div class="col-6">
+                {% set yearValue = app.request.get('year') %}
+                {{ form_label(form.year) }}
+                {{ form_widget(form.year.year, {'value': yearValue }) }}
+            </div>
+        </div>
+
+
+        {{ form_end(form, {'render_rest' : false}) }}
+
+        <div class="col-12 mt-5">
+            <h4 class="alert alert-danger">
+                {{ "app.data.variable.message"|trans }}
+            </h4>
+        </div>
+
+        <div class="col-12 mt-4">
+            <h3>{{ "app.data.variable.hours.structure"|trans }}</h3>
+            <table class="table table-success table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Mitarbeiter</th>
+                    <th scope="col">Stunden</th>
+                    <th scope="col">Anmerkung</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Daniel Heinemann</th>
+                    <td>80</td>
+                    <td>Chef</td>
+                </tr>
+                <tr>
+                    <th scope="row">Steffen Harter</th>
+                    <td>80</td>
+                    <td>Chef</td>
+                </tr>
+                <tr>
+                    <th scope="row">Max Mustermann</th>
+                    <td>250</td>
+                    <td>Vielarbeiter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

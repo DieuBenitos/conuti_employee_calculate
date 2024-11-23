@@ -1,0 +1,55 @@
+<div class="col-xs-4 js-item-riffle">
+    {{ form_errors(form) }}
+    <div class="row">
+        <div class="col-3">
+            <div class="form-floating mb-3">
+                {{ form_widget(form.amount) }}
+                {{ form_label(form.amount) }}
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-floating mb-3">
+                {{ form_widget(form.acquiredFirstname) }}
+                {{ form_label(form.acquiredFirstname) }}
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-floating mb-3">
+                {{ form_widget(form.acquiredName) }}
+                {{ form_label(form.acquiredName) }}
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-floating">
+                {{ form_widget(form.acquiredEntry) }}
+                {{ form_label(form.acquiredEntry) }}
+            </div>
+        </div>
+        <div class="col-3">
+            {{ form_label(form.month) }}
+            {{ form_widget(form.month) }}
+        </div>
+        <div class="col-3">
+            {{ form_label(form.year) }}
+            {{ form_widget(form.year) }}
+        </div>
+        <div class="col-3 mt-3">
+            <div class="form-floating">
+                {{ form_widget(form.info) }}
+            {{ form_label(form.info) }}
+            </div>
+        </div>
+        <div class="col-3 pt-5">
+            {{ form_label(form.acquiredHours) }}
+            {{ form_widget(form.acquiredHours) }}
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-floating mb-3">
+                    {{ form_widget(form.removeEntryRiffle) }}
+                    {{ form_label(form.removeEntryRiffle) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
